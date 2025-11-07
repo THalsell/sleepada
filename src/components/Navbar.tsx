@@ -8,7 +8,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-[var(--color-hero-navy)] shadow-md relative overflow-hidden">
+    <nav className="top-0 z-50 bg-[var(--color-hero-navy)] shadow-md sticky overflow-hidden">
       {/* Shimmer overlay */}
       <div className="absolute inset-0 -translate-x-full animate-[shimmer_3s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
       <div className="py-4 relative z-10">
