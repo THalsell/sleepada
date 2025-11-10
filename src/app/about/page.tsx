@@ -192,7 +192,7 @@ export default function AboutPage() {
           </div>
 
           <p className="text-center text-xl text-[var(--color-hero-navy)] font-semibold font-[family-name:var(--font-cormorant-garamond)]">
-            Compare us and see why we are "Traditionally Built Better".
+            Compare us and see why we are &ldquo;Traditionally Built Better&rdquo;.
           </p>
         </div>
       </section>
