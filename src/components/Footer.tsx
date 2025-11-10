@@ -75,46 +75,30 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Social Links */}
-        <div className="flex gap-4 mt-8 mb-8 justify-center">
-          {footerConfig.about.social.map((social) => (
-            <Link
-              key={social.name}
-              href={social.url}
-              className="opacity-90 hover:opacity-100 transition"
-              aria-label={social.name}
-            >
-              <div className="relative w-8 h-8" style={{ filter: 'brightness(0) saturate(100%) invert(93%) sepia(13%) saturate(439%) hue-rotate(335deg) brightness(103%) contrast(92%)' }}>
-                <Image
-                  src={social.icon}
-                  alt={social.name}
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            </Link>
-          ))}
-        </div>
-
         {/* Copyright Bar */}
-        <div className="border-t border-[var(--color-text-light)] border-opacity-20 pt-8">
+        <div className="border-t border-[var(--color-text-light)] border-opacity-20 pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm opacity-90">
               {footerConfig.copyright.text}
             </p>
+            {/* Social Links */}
             <div className="flex gap-4">
-              {footerConfig.copyright.links.map((link, index) => (
-                <span key={link.name}>
-                  <Link
-                    href={link.url}
-                    className="text-sm opacity-90 hover:opacity-100 transition"
-                  >
-                    {link.name}
-                  </Link>
-                  {index < footerConfig.copyright.links.length - 1 && (
-                    <span className="mx-2 opacity-50">|</span>
-                  )}
-                </span>
+              {footerConfig.about.social.map((social) => (
+                <Link
+                  key={social.name}
+                  href={social.url}
+                  className="opacity-90 hover:opacity-100 transition"
+                  aria-label={social.name}
+                >
+                  <div className="relative w-6 h-6" style={{ filter: 'brightness(0) saturate(100%) invert(93%) sepia(13%) saturate(439%) hue-rotate(335deg) brightness(103%) contrast(92%)' }}>
+                    <Image
+                      src={social.icon}
+                      alt={social.name}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </Link>
               ))}
             </div>
           </div>

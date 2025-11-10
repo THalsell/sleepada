@@ -131,16 +131,32 @@ export const faqCategories: FAQCategory[] = [
         answer: "Unbox your mattress, remove the plastic wrap, and unroll it on your bed frame or foundation. Allow 24-48 hours for full expansion. The new mattress smell (off-gassing) is normal and will dissipate within a few days."
       },
       {
+        question: "What kind of bed frame do I need?",
+        answer: "Use a sturdy, high-quality bed frame with proper support. For Queen and King size mattresses, make sure your frame has a center support bar to ensure proper support and warranty validation. A strong foundation is essential for mattress longevity."
+      },
+      {
         question: "Do I need a box spring?",
-        answer: "No, our mattresses work on any flat, supportive surface including platform beds, slatted frames, adjustable bases, or traditional box springs."
+        answer: "No, our mattresses work on any flat, supportive surface including platform beds, slatted frames, adjustable bases, or traditional box springs. Occasionally rotating your foundation from end to end is a good idea to help equalize wear."
       },
       {
         question: "How often should I rotate my mattress?",
-        answer: "We recommend rotating your mattress head-to-foot every 3-6 months to ensure even wear."
+        answer: "Turn and rotate your mattress every few weeks for the first few months to help smooth out contours. After that, turn and rotate periodically (every 3-6 months) to equalize wear and tear. King mattresses should be rotated one quarter turn each month — even though the mattress isn't perfectly square, it will still fit on your foundation."
       },
       {
         question: "Can I flip my Sleepada mattress?",
-        answer: "No, our mattresses are designed with specific layers and should not be flipped. Only rotate head-to-foot."
+        answer: "No, our mattresses are designed with specific layers and should not be flipped. Only rotate head-to-foot or quarter turns for King sizes."
+      },
+      {
+        question: "Can I remove the law tag?",
+        answer: "Contrary to popular belief, it's not illegal for you to remove the law tag. However, we recommend keeping it on — the information on the label will serve as a means of identification should you have a warranty claim."
+      },
+      {
+        question: "Can I bend or fold my mattress?",
+        answer: "No! Unless a mattress is made entirely of soft material (such as foam) or is specially built to be folded, it probably has a rigid border wire inside that isn't meant to be bent. Bending or folding can damage the interior construction and void your warranty."
+      },
+      {
+        question: "Can my kids jump on the mattress?",
+        answer: "Absolutely not. Jumping and rough-housing on your mattress can damage the interior construction and compromise the mattress performance. It's not a trampoline — protect your investment and keep everyone safe."
       },
       {
         question: "How do I clean my mattress?",

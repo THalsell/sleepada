@@ -144,8 +144,61 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Why Choose Sleepada Section */}
+      {/* Our Advantage Section */}
       <section className="py-16 px-4 bg-white">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-4xl font-[family-name:var(--font-cormorant-garamond)] text-center mb-8 text-[var(--color-hero-navy)]">
+            Our Advantage
+          </h2>
+          <p className="text-xl text-center mb-12 text-gray-600">
+            Quality and Value — Traditionally Built Better
+          </p>
+          <div className="text-lg leading-relaxed space-y-6 text-gray-700 mb-12">
+            <p className="text-center font-semibold text-[var(--color-hero-navy)]">
+              We focus on producing the finest quality bedding for the very best value. It&apos;s that simple. Sleepada is second to no one when it comes to quality and value. We encourage you to compare us to any mattress company anywhere — from the national brands to any specialty stores.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div className="text-center">
+              <div className="text-5xl text-[var(--color-copper)] mb-4">◇</div>
+              <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
+                No National Advertising
+              </h3>
+              <p className="text-gray-700">
+                Rather than spending millions on national advertising — a cost that gets passed to the consumer — we invest our money into producing quality products and rely on our customers to tell their family and friends about us.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="text-5xl text-[var(--color-copper)] mb-4">◇</div>
+              <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
+                No Corporate Overhead
+              </h3>
+              <p className="text-gray-700">
+                We don&apos;t have a large elaborate campus with expensive frills. Our offices, showroom, and design center are all attached to our factory, allowing us to be extremely efficient and save you money.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="text-5xl text-[var(--color-copper)] mb-4">◇</div>
+              <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
+                Family Owned & Operated
+              </h3>
+              <p className="text-gray-700">
+                We don&apos;t rely on rules created by a board of directors or investment group whose only interest is profit. Our commitment is handcrafting the highest quality mattresses in the most efficient and affordable manner, passing the savings on to you.
+              </p>
+            </div>
+          </div>
+
+          <p className="text-center text-xl text-[var(--color-hero-navy)] font-semibold font-[family-name:var(--font-cormorant-garamond)]">
+            Compare us and see why we are "Traditionally Built Better".
+          </p>
+        </div>
+      </section>
+
+      {/* Why Choose Sleepada Section */}
+      <section className="py-16 px-4 bg-[var(--color-cream)]">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-4xl font-[family-name:var(--font-cormorant-garamond)] mb-12 text-[var(--color-hero-navy)]">
             Why Choose Sleepada?

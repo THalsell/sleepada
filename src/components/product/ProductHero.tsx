@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { Product, SizeOption } from '@/types/product';
 import SizeSelector from './SizeSelector';
 import QuantitySelector from './QuantitySelector';
@@ -59,15 +58,6 @@ export default function ProductHero({ product }: ProductHeroProps) {
 
           {/* Right Side - Product Details */}
           <div>
-            {/* Breadcrumb */}
-            <div className="text-sm text-gray-600 mb-4">
-              <Link href="/" className="hover:underline">Home</Link>
-              {' > '}
-              <Link href="/#product-tiers" className="hover:underline">Products</Link>
-              {' > '}
-              <span>{product.name}</span>
-            </div>
-
             {/* Product Name */}
             <h1 className="text-4xl md:text-5xl font-[family-name:var(--font-cormorant-garamond)] text-[var(--color-hero-navy)] mb-2">
               {product.name}

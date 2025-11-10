@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Montserrat, Cormorant_Garamond, Bodoni_Moda } from 'next/font/google'
 import "./globals.css";
+import Navbar from '@/components/Navbar';
+import Breadcrumbs from '@/components/Breadcrumbs';
 import Footer from '@/components/Footer';
 
 const montserrat = Montserrat({
@@ -33,6 +35,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} ${cormorant.variable} ${bodoni.variable}`}>
       <body>
+        <Navbar />
+        <Breadcrumbs />
         {children}
         <Footer />
       </body>

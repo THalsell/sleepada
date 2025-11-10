@@ -34,17 +34,9 @@ export const footerConfig = {
   contact: {
     title: "Contact",
     email: "sleepadasales@gmail.com",
-    hours: "Monday - Friday: 9am - 5pm CST",
-    newsletter: {
-      title: "Stay Updated",
-      placeholder: "Enter your email",
-    },
   },
   copyright: {
     text: "© 2025 Sleepada™. All rights reserved.",
-    links: [
-      { name: "Privacy Policy", url: "/privacy" },
-      { name: "Terms of Service", url: "/terms" },
-    ],
+    links: [],
   },
 };

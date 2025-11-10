@@ -1,4 +1,3 @@
-import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import ProductTiers from '@/components/ProductTiers';
 import ManufacturingProcess from '@/components/ManufacturingProcess';
@@ -11,7 +10,6 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       <main>
-        <Navbar />
         <Hero />
         <ProductTiers />
         <ServiceIcons />
