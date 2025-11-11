@@ -5,8 +5,6 @@ import { PetSizeOption, PetProduct } from '@/types/product';
 import { petCoreProduct } from '@/config/products/pet-core';
 import { petPrimeProduct } from '@/config/products/pet-prime';
 import { petFirPlusProduct } from '@/config/products/pet-fir-plus';
-import QuantitySelector from './QuantitySelector';
-import AddToCartButton from './AddToCartButton';
 
 const petProducts = {
   'pet-core': petCoreProduct,
@@ -23,10 +21,8 @@ const sizeLabels: Record<PetSizeOption, { name: string; dimensions: string }> = 
 export default function CombinedPetSelector() {
   const [selectedProduct, setSelectedProduct] = useState<keyof typeof petProducts>('pet-core');
   const [selectedSize, setSelectedSize] = useState<PetSizeOption>('medium');
-  const [quantity, setQuantity] = useState(1);
 
   const product = petProducts[selectedProduct];
-  const currentPrice = product.prices[selectedSize];
 
   return (
     <div className="max-w-2xl mx-auto">
@@ -104,27 +100,18 @@ export default function CombinedPetSelector() {
       <div className="mb-6 pb-6 border-b border-gray-200">
         <div className="flex items-baseline justify-between">
           <span className="text-lg text-gray-600">Price:</span>
-          <span className="text-3xl font-bold text-[var(--color-copper)]">${currentPrice}</span>
+          <span className="text-2xl font-semibold text-[var(--color-copper)]">Contact for price</span>
         </div>
-        <p className="text-sm text-gray-600 mt-2">Free shipping included</p>
+        <p className="text-sm text-gray-600 mt-2">Email us for pricing and availability</p>
       </div>
 
-      {/* Quantity Selector */}
-      <div className="mb-6">
-        <QuantitySelector
-          quantity={quantity}
-          onQuantityChange={setQuantity}
-        />
-      </div>
-
-      {/* Add to Cart Button */}
-      <AddToCartButton
-        productId={product.id}
-        productName={product.name}
-        size={selectedSize}
-        quantity={quantity}
-        price={currentPrice}
-      />
+      {/* Contact Button */}
+      <a
+        href={`mailto:sleepadasales@gmail.com?subject=Pet Bed Inquiry - ${product.name} (${sizeLabels[selectedSize].name})`}
+        className="w-full bg-[var(--color-copper)] text-white px-8 py-4 rounded-lg hover:opacity-90 transition-opacity font-semibold text-center block"
+      >
+        Contact Us for Pricing
+      </a>
     </div>
   );
 }
