@@ -212,3 +212,48 @@ export interface TopperProduct {
   bestFor: string;
   isTopper: true;
 }
+
+// Pet bed specific sizes
+export type PetSizeOption = 'small' | 'medium' | 'large';
+
+export interface PetProductPrices {
+  small: number;
+  medium: number;
+  large: number;
+}
+
+export interface PetProduct {
+  id: string;
+  name: string;
+  slug: string;
+  tagline: string;
+  description: string;
+  images: string[];
+  prices: PetProductPrices;
+  features: string[];
+  specs: ProductSpecs;
+  reviews: ProductReview[];
+  layerDescription: string;
+  warranty: string;
+  bestFor: string;
+  isPet: true;
+}
+
+// Topper uses RV sizes for custom sizing
+export type TopperSizeOption = RVSizeOption;
+
+export interface TopperProductWithSizes {
+  id: string;
+  name: string;
+  slug: string;
+  tagline: string;
+  description: string;
+  images: string[];
+  features: string[];
+  specs: ProductSpecs;
+  reviews: ProductReview[];
+  layerDescription: string;
+  warranty: string;
+  bestFor: string;
+  isTopper: true;
+}

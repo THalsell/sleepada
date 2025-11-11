@@ -78,9 +78,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {values.map((value, index) => (
               <div key={index} className="bg-white p-8 rounded-lg shadow-md text-center">
-                <div className="text-5xl text-[var(--color-copper)] mb-4">
-                  {value.icon}
-                </div>
+                
                 <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
                   {value.title}
                 </h3>

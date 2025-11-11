@@ -1,10 +1,7 @@
-import type { Metadata } from 'next';
+'use client';
 
-
-export const metadata: Metadata = {
-  title: 'Pet Beds | Sleepada™',
-  description: 'Premium pet beds from Sleepada™. Give your furry friends the same quality sleep you enjoy. Handcrafted, comfortable, and built to last.',
-};
+import CombinedPetSelector from '@/components/product/CombinedPetSelector';
+import Image from 'next/image';
 
 export default function PetPage() {
   return (
@@ -21,7 +18,30 @@ export default function PetPage() {
         </div>
       </section>
 
-      
+      {/* Product Section */}
+      <section className="py-16 px-4 bg-white">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-4xl font-[family-name:var(--font-cormorant-garamond)] text-center mb-12 text-[var(--color-hero-navy)]">
+            Choose Your Perfect Pet Bed
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Product Image */}
+            <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-lg">
+              <Image
+                src="/images/petbed.png"
+                alt="Premium Pet Bed"
+                fill
+                className="object-contain"
+              />
+            </div>
+
+            {/* Right Side - Product Selector */}
+            <div>
+              <CombinedPetSelector />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Why Pet Owners Choose Us Section */}
       <section className="py-16 px-4 bg-[var(--color-cream)]">
@@ -61,7 +81,7 @@ export default function PetPage() {
             </div>
 
             <div className="bg-white p-8 rounded-lg shadow-md">
-              
+             
               <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
                 Multiple Sizes
               </h3>

@@ -1,13 +1,13 @@
 'use client';
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { SizeOption, RVSizeOption, DormSizeOption, PillowSizeOption } from '@/types/product';
+import { SizeOption, RVSizeOption, DormSizeOption, PillowSizeOption, PetSizeOption } from '@/types/product';
 
 export interface CartItem {
   id: string;
   productId: string;
   productName: string;
-  size: SizeOption | RVSizeOption | DormSizeOption | PillowSizeOption;
+  size: SizeOption | RVSizeOption | DormSizeOption | PillowSizeOption | PetSizeOption;
   quantity: number;
   price: number;
 }

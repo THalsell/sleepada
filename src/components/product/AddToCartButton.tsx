@@ -1,6 +1,6 @@
 'use client';
 
-import { SizeOption, RVSizeOption, DormSizeOption, PillowSizeOption } from '@/types/product';
+import { SizeOption, RVSizeOption, DormSizeOption, PillowSizeOption, PetSizeOption } from '@/types/product';
 import { useCart } from '@/contexts/CartContext';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
@@ -8,7 +8,7 @@ import { useState } from 'react';
 interface AddToCartButtonProps {
   productId: string;
   productName: string;
-  size: SizeOption | RVSizeOption | DormSizeOption | PillowSizeOption;
+  size: SizeOption | RVSizeOption | DormSizeOption | PillowSizeOption | PetSizeOption;
   quantity: number;
   price: number;
 }
