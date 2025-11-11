@@ -33,7 +33,7 @@ export const serviceIcons = [
     description: '3-20 years depending on model',
   },
   {
-    icon: '/icons/usa.png',
+    icon: '/icons/USA.png',
     title: 'Made in USA',
     description: 'Proudly crafted in America',
   },
