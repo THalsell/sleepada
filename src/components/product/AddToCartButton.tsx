@@ -1,9 +1,9 @@
-import { SizeOption } from '@/types/product';
+import { SizeOption, RVSizeOption, DormSizeOption, PillowSizeOption } from '@/types/product';
 
 interface AddToCartButtonProps {
   productId: string;
   productName: string;
-  size: SizeOption;
+  size: SizeOption | RVSizeOption | DormSizeOption | PillowSizeOption;
   quantity: number;
   price: number;
 }

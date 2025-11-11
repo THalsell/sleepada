@@ -1,12 +1,27 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Mattress Toppers | Sleepada™',
-  description: 'Memory foam and certified organic latex toppers cut to order. Transform your mattress with premium American-made toppers from Sleepada™.',
-};
+import { useState } from 'react';
+import Image from 'next/image';
+import { SizeOption } from '@/types/product';
+import { organicLatexTopper } from '@/config/products/topper';
+import QuantitySelector from '@/components/product/QuantitySelector';
+import AddToCartButton from '@/components/product/AddToCartButton';
 
 export default function ToppersPage() {
+  const [selectedSize, setSelectedSize] = useState<SizeOption>('queen');
+  const [quantity, setQuantity] = useState(1);
+
+  const topper = organicLatexTopper;
+  const currentPrice = topper.prices[selectedSize];
+
+  const sizeLabels: Record<SizeOption, { name: string; dimensions: string }> = {
+    twin: { name: 'Twin', dimensions: '38" × 75"' },
+    full: { name: 'Full', dimensions: '54" × 75"' },
+    queen: { name: 'Queen', dimensions: '60" × 80"' },
+    king: { name: 'King', dimensions: '76" × 80"' },
+    calKing: { name: 'California King', dimensions: '72" × 84"' }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -21,31 +36,133 @@ export default function ToppersPage() {
         </div>
       </section>
 
-      {/* Story Section */}
-      <section className="py-16 px-4 bg-white">
+      
+      {/* Product Section */}
+      <section className="py-16 px-4 bg-[var(--color-cream)]">
         <div className="mx-auto max-w-4xl">
-          <div className="text-lg leading-relaxed space-y-6 text-gray-700">
-            <p className="text-2xl font-[family-name:var(--font-cormorant-garamond)] text-[var(--color-hero-navy)] mb-8">
-              Not ready to replace your entire mattress, but need a better night&apos;s sleep? A quality mattress topper might be exactly what you need.
+          <h2 className="text-4xl font-[family-name:var(--font-cormorant-garamond)] text-center mb-12 text-[var(--color-hero-navy)]">
+            Our Certified Organic Latex Topper
+          </h2>
+          <div className="bg-white p-8 rounded-lg shadow-md">
+            <div className="relative w-full h-64 md:h-80 mb-6 rounded-lg overflow-hidden">
+              <Image
+                src="/images/toppers.webp"
+                alt="Memory Foam Mattress Topper"
+                fill
+                className="object-contain"
+              />
+            </div>
+            <h3 className="text-3xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-4 text-[var(--color-hero-navy)] text-center">
+              Certified Organic Latex Mattress Topper
+            </h3>
+            <p className="text-gray-700 mb-6 text-lg text-center max-w-2xl mx-auto">
+              100% natural, GOLS certified organic latex cut to order. Eco-friendly, naturally hypoallergenic, and incredibly durable. Optional certified organic cotton zipper covers available.
             </p>
-            <p>
-              Maybe your mattress is a little too firm. Maybe it&apos;s showing its age but still has some life left. Or maybe you just want to add an extra layer of plush comfort without breaking the bank. Whatever the reason, a Sleepada™ mattress topper can completely transform your sleep experience.
-            </p>
-            <p>
-              Handcrafted right here in Tennessee with the same premium materials we use in our mattresses, our toppers add instant comfort and support. Choose from high-density memory foam that contours to your body or certified organic latex for natural, responsive support — both cut to order in our facility.
-            </p>
-            <p>
-              It&apos;s an affordable upgrade that makes a real difference — extending the life of your current mattress while giving you the comfort you deserve.
-            </p>
+
+            {/* Size and Purchase Section */}
+            <div className="max-w-md mx-auto mb-8">
+              {/* Size Selector */}
+              <div className="mb-6">
+                <label htmlFor="topper-size-select" className="text-lg font-semibold mb-3 block text-[var(--color-hero-navy)]">
+                  Select Size
+                </label>
+                <div className="relative">
+                  <select
+                    id="topper-size-select"
+                    value={selectedSize}
+                    onChange={(e) => setSelectedSize(e.target.value as SizeOption)}
+                    className="w-full px-4 py-3 pr-10 border-2 border-gray-300 rounded-lg text-[var(--color-hero-navy)] font-medium bg-white hover:border-gray-400 focus:border-[var(--color-copper)] focus:outline-none focus:ring-2 focus:ring-[var(--color-copper)]/20 transition-all appearance-none cursor-pointer"
+                  >
+                    {Object.entries(sizeLabels).map(([size, label]) => (
+                      <option key={size} value={size}>
+                        {label.name} ({label.dimensions})
+                      </option>
+                    ))}
+                  </select>
+                  <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                    <svg
+                      className="w-5 h-5 text-gray-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              {/* Price Display */}
+              <div className="mb-6 pb-6 border-b border-gray-200">
+                <div className="flex items-baseline justify-between">
+                  <span className="text-lg text-gray-600">Price:</span>
+                  <span className="text-3xl font-bold text-[var(--color-copper)]">${currentPrice}</span>
+                </div>
+                <p className="text-sm text-gray-600 mt-2">Free shipping included</p>
+              </div>
+
+              {/* Quantity Selector */}
+              <div className="mb-6">
+                <QuantitySelector
+                  quantity={quantity}
+                  onQuantityChange={setQuantity}
+                />
+              </div>
+
+              {/* Add to Cart Button */}
+              <AddToCartButton
+                productId={topper.id}
+                productName={topper.name}
+                size={selectedSize}
+                quantity={quantity}
+                price={currentPrice}
+              />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-start gap-3">
+                  <span className="text-[var(--color-copper)] text-2xl">✦</span>
+                  <span className="text-lg">GOLS certified organic latex</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[var(--color-copper)] text-2xl">✦</span>
+                  <span className="text-lg">Naturally hypoallergenic and antimicrobial</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[var(--color-copper)] text-2xl">✦</span>
+                  <span className="text-lg">Responsive, buoyant support</span>
+                </li>
+              </ul>
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-start gap-3">
+                  <span className="text-[var(--color-copper)] text-2xl">✦</span>
+                  <span className="text-lg">Organic cotton cover options available</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[var(--color-copper)] text-2xl">✦</span>
+                  <span className="text-lg">Cut to order in Tennessee</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[var(--color-copper)] text-2xl">✦</span>
+                  <span className="text-lg">Eco-friendly and sustainable</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Topper Types Section */}
-      <section className="py-16 px-4 bg-[var(--color-cream)]">
+      {/* Additional Topper Info Section */}
+      <section className="py-16 px-4 bg-white">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-4xl font-[family-name:var(--font-cormorant-garamond)] text-center mb-12 text-[var(--color-hero-navy)]">
-            Choose Your Topper Type
+            Premium Features & Options
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white p-8 rounded-lg shadow-md">
@@ -195,20 +312,12 @@ export default function ToppersPage() {
           <p className="text-xl mb-8">
             Add comfort, support, and years of life to your mattress with a Sleepada topper.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/"
-              className="bg-[var(--color-copper)] text-white px-8 py-3 rounded-lg hover:opacity-90 transition-opacity font-semibold"
-            >
-              Shop Toppers
-            </Link>
-            <a
-              href="mailto:sleepadasales@gmail.com"
-              className="bg-transparent border-2 border-[var(--color-cream)] text-[var(--color-cream)] px-8 py-3 rounded-lg hover:bg-[var(--color-cream)] hover:text-[var(--color-hero-navy)] transition-all font-semibold"
-            >
-              Contact Us
-            </a>
-          </div>
+          <a
+            href="mailto:sleepadasales@gmail.com"
+            className="inline-block bg-[var(--color-copper)] text-white px-8 py-3 rounded-lg hover:opacity-90 transition-opacity font-semibold"
+          >
+            Contact Us
+          </a>
         </div>
       </section>
     </div>

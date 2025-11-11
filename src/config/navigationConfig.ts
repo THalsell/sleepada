@@ -21,12 +21,22 @@ export const navigationConfig: NavigationConfig = {
       href: '/dorm',
     },
     {
-      label: 'Pet',
-      href: '/pet',
-    },
-    {
       label: 'Accessories',
-      href: '/accessories',
+      href: '#',
+      children: [
+        {
+          label: 'Pet Beds',
+          href: '/pet',
+        },
+        {
+          label: 'Pillows',
+          href: '/pillows',
+        },
+        {
+          label: 'Toppers',
+          href: '/toppers',
+        },
+      ],
     },
   ],
 };
