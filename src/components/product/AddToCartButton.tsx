@@ -1,4 +1,9 @@
+'use client';
+
 import { SizeOption, RVSizeOption, DormSizeOption, PillowSizeOption } from '@/types/product';
+import { useCart } from '@/contexts/CartContext';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 interface AddToCartButtonProps {
   productId: string;
@@ -9,19 +14,22 @@ interface AddToCartButtonProps {
 }
 
 export default function AddToCartButton({ productId, productName, size, quantity, price }: AddToCartButtonProps) {
+  const { addItem } = useCart();
+  const router = useRouter();
+  const [showSuccess, setShowSuccess] = useState(false);
+
   const handleAddToCart = () => {
-    const cartItem = {
-      product: productId,
+    addItem({
+      productId,
       productName,
       size,
       quantity,
       price,
-      total: price * quantity
-    };
+    });
 
-    console.log('Add to Cart:', cartItem);
-    // TODO: Implement Shopify integration
-    alert(`Added ${quantity}x ${productName} (${size.toUpperCase()}) to cart - $${price * quantity}`);
+    // Show success message
+    setShowSuccess(true);
+    setTimeout(() => setShowSuccess(false), 3000);
   };
 
   const handleShopAmazon = () => {
@@ -32,12 +40,28 @@ export default function AddToCartButton({ productId, productName, size, quantity
 
   return (
     <div className="space-y-3 mb-6">
+      {showSuccess && (
+        <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg mb-3">
+          <p className="font-semibold">✓ Added to cart!</p>
+        </div>
+      )}
+
       <button
         onClick={handleAddToCart}
         className="w-full bg-[var(--color-copper)] text-white py-4 text-lg font-semibold rounded-lg hover:opacity-90 transition-opacity"
       >
         Add to Cart
       </button>
+
+      {showSuccess && (
+        <button
+          onClick={() => router.push('/cart')}
+          className="w-full bg-[var(--color-hero-navy)] text-white py-4 text-lg font-semibold rounded-lg hover:opacity-90 transition-opacity"
+        >
+          View Cart
+        </button>
+      )}
+
       <button
         onClick={handleShopAmazon}
         className="w-full bg-[var(--color-sky-blue)] text-[var(--color-text-dark)] py-4 text-lg font-semibold rounded-lg hover:opacity-90 transition-opacity"

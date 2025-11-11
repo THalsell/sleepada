@@ -2,11 +2,14 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { navigationConfig } from '@/config/navigationConfig';
+import { useCart } from '@/contexts/CartContext';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const { totalItems } = useCart();
 
   return (
     <nav className="top-0 z-50 bg-[var(--color-hero-navy)] shadow-md sticky">
@@ -27,7 +30,7 @@ export default function Navbar() {
             </div>
 
             {/* Desktop Navigation - Right Side */}
-            <div className="hidden md:flex items-center space-x-6 lg:space-x-8 xl:space-x-10 lg:pr-16 xl:pr-24">
+            <div className="hidden md:flex items-center space-x-6 lg:space-x-8 xl:space-x-10">
               {navigationConfig.secondaryNav.map((link) => (
                 link.children ? (
                   <div
@@ -66,10 +69,63 @@ export default function Navbar() {
                   </Link>
                 )
               ))}
+
+              {/* Shopping Cart Icon - Desktop */}
+              <Link href="/cart" className="relative ml-4 group">
+                <div className="relative w-6 h-6">
+                  <Image
+                    src="/icons/shoppingcart.png"
+                    alt="Shopping Cart"
+                    width={24}
+                    height={24}
+                    className="brightness-0 invert opacity-100 group-hover:opacity-0 transition-opacity absolute inset-0"
+                  />
+                  <Image
+                    src="/icons/shoppingcart.png"
+                    alt="Shopping Cart"
+                    width={24}
+                    height={24}
+                    className="opacity-0 group-hover:opacity-100 transition-opacity absolute inset-0"
+                    style={{ filter: 'invert(48%) sepia(79%) saturate(2476%) hue-rotate(346deg) brightness(95%) contrast(92%)' }}
+                  />
+                </div>
+                {totalItems > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-[var(--color-copper)] text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                    {totalItems}
+                  </span>
+                )}
+              </Link>
             </div>
 
-            {/* Mobile menu button */}
-            <div className="md:hidden">
+            {/* Mobile Cart & Menu */}
+            <div className="md:hidden flex items-center gap-4">
+              {/* Shopping Cart Icon - Mobile */}
+              <Link href="/cart" className="relative group">
+                <div className="relative w-6 h-6">
+                  <Image
+                    src="/icons/shoppingcart.png"
+                    alt="Shopping Cart"
+                    width={24}
+                    height={24}
+                    className="brightness-0 invert opacity-100 group-hover:opacity-0 transition-opacity absolute inset-0"
+                  />
+                  <Image
+                    src="/icons/shoppingcart.png"
+                    alt="Shopping Cart"
+                    width={24}
+                    height={24}
+                    className="opacity-0 group-hover:opacity-100 transition-opacity absolute inset-0"
+                    style={{ filter: 'invert(48%) sepia(79%) saturate(2476%) hue-rotate(346deg) brightness(95%) contrast(92%)' }}
+                  />
+                </div>
+                {totalItems > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-[var(--color-copper)] text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                    {totalItems}
+                  </span>
+                )}
+              </Link>
+
+              {/* Mobile menu button */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="inline-flex items-center justify-center p-2 rounded-md text-[var(--color-cream)] hover:bg-white/10 focus:outline-none"

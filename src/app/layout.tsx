@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from '@/components/Navbar';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import Footer from '@/components/Footer';
+import { CartProvider } from '@/contexts/CartContext';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -35,10 +36,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} ${cormorant.variable} ${bodoni.variable}`}>
       <body>
-        <Navbar />
-        <Breadcrumbs />
-        {children}
-        <Footer />
+        <CartProvider>
+          <Navbar />
+          <Breadcrumbs />
+          {children}
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   )
