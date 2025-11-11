@@ -158,7 +158,7 @@ export default function PillowsPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-[var(--color-cream)] p-8 rounded-lg shadow-md">
-              <div className="text-4xl text-[var(--color-copper)] mb-4">✦</div>
+              
               <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
                 Manufactured In-House
               </h3>
@@ -168,7 +168,7 @@ export default function PillowsPage() {
             </div>
 
             <div className="bg-[var(--color-cream)] p-8 rounded-lg shadow-md">
-              <div className="text-4xl text-[var(--color-copper)] mb-4">★</div>
+              
               <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
                 Premium Materials
               </h3>
@@ -178,7 +178,7 @@ export default function PillowsPage() {
             </div>
 
             <div className="bg-[var(--color-cream)] p-8 rounded-lg shadow-md">
-              <div className="text-4xl text-[var(--color-copper)] mb-4">◆</div>
+              
               <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
                 Ships Anywhere in the USA
               </h3>

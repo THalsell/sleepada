@@ -230,7 +230,7 @@ export default function ToppersPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white p-8 rounded-lg shadow-md">
-              <div className="text-4xl text-[var(--color-copper)] mb-4">✦</div>
+              
               <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
                 Instant Comfort Upgrade
               </h3>
@@ -240,7 +240,7 @@ export default function ToppersPage() {
             </div>
 
             <div className="bg-white p-8 rounded-lg shadow-md">
-              <div className="text-4xl text-[var(--color-copper)] mb-4">★</div>
+              
               <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
                 Premium Materials
               </h3>
@@ -250,7 +250,7 @@ export default function ToppersPage() {
             </div>
 
             <div className="bg-white p-8 rounded-lg shadow-md">
-              <div className="text-4xl text-[var(--color-copper)] mb-4">✓</div>
+            
               <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
                 Handcrafted Quality
               </h3>
@@ -260,7 +260,7 @@ export default function ToppersPage() {
             </div>
 
             <div className="bg-white p-8 rounded-lg shadow-md">
-              <div className="text-4xl text-[var(--color-copper)] mb-4">◆</div>
+              
               <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
                 Custom Options Available
               </h3>

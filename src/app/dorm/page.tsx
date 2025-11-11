@@ -231,7 +231,7 @@ export default function DormPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-[var(--color-cream)] p-8 rounded-lg">
-              <div className="text-4xl text-[var(--color-copper)] mb-4">✦</div>
+              
               <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
                 Perfect Fit for Dorms
               </h3>
@@ -241,7 +241,7 @@ export default function DormPage() {
             </div>
 
             <div className="bg-[var(--color-cream)] p-8 rounded-lg">
-              <div className="text-4xl text-[var(--color-copper)] mb-4">★</div>
+              
               <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
                 Compressed Shipping
               </h3>
@@ -251,7 +251,7 @@ export default function DormPage() {
             </div>
 
             <div className="bg-[var(--color-cream)] p-8 rounded-lg">
-              <div className="text-4xl text-[var(--color-copper)] mb-4">✓</div>
+              
               <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
                 Safe & Certified
               </h3>
@@ -261,7 +261,7 @@ export default function DormPage() {
             </div>
 
             <div className="bg-[var(--color-cream)] p-8 rounded-lg">
-              <div className="text-4xl text-[var(--color-copper)] mb-4">◆</div>
+              
               <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
                 Quality on a Budget
               </h3>

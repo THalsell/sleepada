@@ -10,7 +10,6 @@ import ProductHero from '@/components/product/ProductHero';
 import KeyFeatures from '@/components/product/KeyFeatures';
 import ProductDescription from '@/components/product/ProductDescription';
 import SpecAccordion from '@/components/product/SpecAccordion';
-import ProductReviews from '@/components/product/ProductReviews';
 import ProductComparison from '@/components/product/ProductComparison';
 import ProductCategories from '@/components/ProductCategories';
 import { Product, RVProduct } from '@/types/product';
@@ -80,7 +79,6 @@ export default async function ProductPage({ params }: PageProps) {
         bestFor={product.bestFor}
       />
       <ProductComparison currentProductId={product.id} />
-      <ProductReviews reviews={product.reviews} productName={product.name} />
       <ProductCategories />
     </div>
   );

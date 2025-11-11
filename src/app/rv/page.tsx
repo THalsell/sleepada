@@ -235,7 +235,7 @@ export default function RVPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-[var(--color-cream)] p-8 rounded-lg">
-              <div className="text-4xl text-[var(--color-copper)] mb-4">✦</div>
+              
               <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
                 Custom Sizes
               </h3>
@@ -245,7 +245,7 @@ export default function RVPage() {
             </div>
 
             <div className="bg-[var(--color-cream)] p-8 rounded-lg">
-              <div className="text-4xl text-[var(--color-copper)] mb-4">★</div>
+              
               <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
                 Lightweight & Durable
               </h3>
@@ -255,7 +255,7 @@ export default function RVPage() {
             </div>
 
             <div className="bg-[var(--color-cream)] p-8 rounded-lg">
-              <div className="text-4xl text-[var(--color-copper)] mb-4">✓</div>
+              
               <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
                 Made in America
               </h3>
@@ -265,7 +265,7 @@ export default function RVPage() {
             </div>
 
             <div className="bg-[var(--color-cream)] p-8 rounded-lg">
-              <div className="text-4xl text-[var(--color-copper)] mb-4">◆</div>
+              
               <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
                 Ships to Your Door
               </h3>

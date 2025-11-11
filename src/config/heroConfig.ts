@@ -6,7 +6,7 @@ export const heroConfig: HeroConfig = {
   buttons: [
     {
       label: 'Shop Mattresses',
-      href: '/mattresses',
+      href: '/#products',
       variant: 'primary',
     },
     {

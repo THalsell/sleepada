@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+
 
 export const metadata: Metadata = {
   title: 'Pet Beds | Sleepada™',
@@ -21,28 +21,7 @@ export default function PetPage() {
         </div>
       </section>
 
-      {/* Story Section */}
-      <section className="py-16 px-4 bg-white">
-        <div className="mx-auto max-w-4xl">
-          <div className="text-lg leading-relaxed space-y-6 text-gray-700">
-            <p className="text-2xl font-[family-name:var(--font-cormorant-garamond)] text-[var(--color-hero-navy)] mb-8">
-              They greet you at the door with boundless joy. They curl up beside you on quiet evenings. They&apos;re there through it all — your loyal companion, your family.
-            </p>
-            <p>
-              So why should your furry friend settle for a flimsy pet bed that flattens after a few weeks? They deserve the same quality sleep you do.
-            </p>
-            <p>
-              At Sleepada™, we craft pet beds right here in Tennessee using the same premium materials and attention to detail that go into our human mattresses. High-density foam, durable covers, and thoughtful construction — because your pet is family, and family deserves the best.
-            </p>
-            <p>
-              Whether it&apos;s your senior dog who needs extra joint support, your adventurous pup who crashes hard after a day at the park, or your cat who&apos;s finally ready to stop stealing your spot on the couch — we&apos;ve got a bed built for comfort that lasts.
-            </p>
-            <p>
-              After all, a well-rested pet is a happy pet. And a happy pet makes for a happy home.
-            </p>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Why Pet Owners Choose Us Section */}
       <section className="py-16 px-4 bg-[var(--color-cream)]">
@@ -52,7 +31,7 @@ export default function PetPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white p-8 rounded-lg shadow-md">
-              <div className="text-4xl text-[var(--color-copper)] mb-4">✦</div>
+              
               <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
                 Premium Materials
               </h3>
@@ -62,7 +41,7 @@ export default function PetPage() {
             </div>
 
             <div className="bg-white p-8 rounded-lg shadow-md">
-              <div className="text-4xl text-[var(--color-copper)] mb-4">★</div>
+              
               <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
                 Built to Last
               </h3>
@@ -72,7 +51,7 @@ export default function PetPage() {
             </div>
 
             <div className="bg-white p-8 rounded-lg shadow-md">
-              <div className="text-4xl text-[var(--color-copper)] mb-4">✓</div>
+              
               <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
                 Handcrafted in Tennessee
               </h3>
@@ -82,7 +61,7 @@ export default function PetPage() {
             </div>
 
             <div className="bg-white p-8 rounded-lg shadow-md">
-              <div className="text-4xl text-[var(--color-copper)] mb-4">◆</div>
+              
               <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
                 Multiple Sizes
               </h3>
@@ -103,20 +82,12 @@ export default function PetPage() {
           <p className="text-xl mb-8">
             They&apos;ve given you unconditional love. Give them a bed they&apos;ll love just as much.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/"
-              className="bg-[var(--color-copper)] text-white px-8 py-3 rounded-lg hover:opacity-90 transition-opacity font-semibold"
-            >
-              Explore Pet Beds
-            </Link>
-            <a
-              href="mailto:sleepadasales@gmail.com"
-              className="bg-transparent border-2 border-[var(--color-cream)] text-[var(--color-cream)] px-8 py-3 rounded-lg hover:bg-[var(--color-cream)] hover:text-[var(--color-hero-navy)] transition-all font-semibold"
-            >
-              Contact Us for Custom Sizes
-            </a>
-          </div>
+          <a
+            href="mailto:sleepadasales@gmail.com"
+            className="inline-block bg-[var(--color-copper)] text-white px-8 py-3 rounded-lg hover:opacity-90 transition-opacity font-semibold"
+          >
+            Contact Us for Custom Sizes
+          </a>
         </div>
       </section>
     </div>

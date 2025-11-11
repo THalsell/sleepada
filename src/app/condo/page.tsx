@@ -231,7 +231,7 @@ export default function CondoPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-[var(--color-cream)] p-8 rounded-lg">
-              <div className="text-4xl text-[var(--color-copper)] mb-4">✦</div>
+              
               <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
                 Easy Delivery & Setup
               </h3>
@@ -241,7 +241,7 @@ export default function CondoPage() {
             </div>
 
             <div className="bg-[var(--color-cream)] p-8 rounded-lg">
-              <div className="text-4xl text-[var(--color-copper)] mb-4">★</div>
+              
               <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
                 Space-Efficient Sizes
               </h3>
@@ -251,7 +251,7 @@ export default function CondoPage() {
             </div>
 
             <div className="bg-[var(--color-cream)] p-8 rounded-lg">
-              <div className="text-4xl text-[var(--color-copper)] mb-4">✓</div>
+              
               <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
                 Quality Craftsmanship
               </h3>
@@ -261,7 +261,7 @@ export default function CondoPage() {
             </div>
 
             <div className="bg-[var(--color-cream)] p-8 rounded-lg">
-              <div className="text-4xl text-[var(--color-copper)] mb-4">◆</div>
+              
               <h3 className="text-xl font-bold font-[family-name:var(--font-cormorant-garamond)] mb-3 text-[var(--color-hero-navy)]">
                 Move-In Ready
               </h3>

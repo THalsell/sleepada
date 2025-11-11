@@ -31,7 +31,7 @@ function ProductCard({ product }: { product: typeof productTiersConfig.products[
 
 export default function ProductTiers() {
   return (
-    <section className=" py-16 px-4" style={{ background: 'var(--color-cream)' }}>
+    <section id="products" className=" py-16 px-4" style={{ background: 'var(--color-cream)' }}>
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-24">
           {productTiersConfig.products.map((product) => (
