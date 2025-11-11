@@ -20,7 +20,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: "What sizes do you offer?",
-        answer: "We offer all standard mattress sizes: Twin, Full, Queen, King, and California King. All sizes are available for each mattress tier."
+        answer: "We offer all standard mattress sizes: Twin, Full, Queen, King, and California King. All sizes are available for each mattress tier. We also offer custom sizes — contact us at sleepadasales@gmail.com to discuss your specific requirements."
       },
       {
         question: "Are your mattresses CertiPUR-US® certified?",
@@ -46,7 +46,7 @@ export const faqCategories: FAQCategory[] = [
     questions: [
       {
         question: "How do I place an order?",
-        answer: "You can order directly through our website or contact us at sleepadasales@gmail.com. Select your mattress, choose your size, and add to cart. We accept major credit cards and offer secure checkout."
+        answer: "You can order directly through our website, on Amazon with Prime shipping, or contact us at sleepadasales@gmail.com. Select your mattress, choose your size, and add to cart. We accept major credit cards and offer secure checkout."
       },
       {
         question: "Do you offer financing or payment plans?",
@@ -85,10 +85,6 @@ export const faqCategories: FAQCategory[] = [
       {
         question: "Do you ship to Alaska, Hawaii, or internationally?",
         answer: "Currently, we ship to the continental US. For Alaska, Hawaii, or international orders, please contact us at sleepadasales@gmail.com for options."
-      },
-      {
-        question: "Do you offer white glove delivery or setup?",
-        answer: "Contact us at sleepadasales@gmail.com for white glove delivery options and pricing."
       },
       {
         question: "What if I'm not home when it's delivered?",
@@ -143,20 +139,8 @@ export const faqCategories: FAQCategory[] = [
         answer: "Turn and rotate your mattress every few weeks for the first few months to help smooth out contours. After that, turn and rotate periodically (every 3-6 months) to equalize wear and tear. King mattresses should be rotated one quarter turn each month — even though the mattress isn't perfectly square, it will still fit on your foundation."
       },
       {
-        question: "Can I flip my Sleepada mattress?",
-        answer: "No, our mattresses are designed with specific layers and should not be flipped. Only rotate head-to-foot or quarter turns for King sizes."
-      },
-      {
         question: "Can I remove the law tag?",
         answer: "Contrary to popular belief, it's not illegal for you to remove the law tag. However, we recommend keeping it on — the information on the label will serve as a means of identification should you have a warranty claim."
-      },
-      {
-        question: "Can I bend or fold my mattress?",
-        answer: "No! Unless a mattress is made entirely of soft material (such as foam) or is specially built to be folded, it probably has a rigid border wire inside that isn't meant to be bent. Bending or folding can damage the interior construction and void your warranty."
-      },
-      {
-        question: "Can my kids jump on the mattress?",
-        answer: "Absolutely not. Jumping and rough-housing on your mattress can damage the interior construction and compromise the mattress performance. It's not a trampoline — protect your investment and keep everyone safe."
       },
       {
         question: "How do I clean my mattress?",
@@ -185,16 +169,12 @@ export const faqCategories: FAQCategory[] = [
         answer: "Yes! Our CertiPUR-US® certified foams are made without harmful chemicals, making them safe for the whole family."
       },
       {
-        question: "Do your mattresses contain fiberglass?",
-        answer: "Contact us at sleepadasales@gmail.com for specific material information."
-      },
-      {
         question: "Can I use an electric blanket or heating pad?",
         answer: "Yes, but use caution. High heat can damage memory foam over time. Follow the manufacturer's instructions for your heating product."
       },
       {
         question: "Do you make custom sizes?",
-        answer: "Contact us at sleepadasales@gmail.com to discuss custom size options."
+        answer: "Yes! We offer custom size mattresses. Contact us at sleepadasales@gmail.com to discuss your specific size requirements and get a quote."
       },
       {
         question: "How can I contact customer service?",
