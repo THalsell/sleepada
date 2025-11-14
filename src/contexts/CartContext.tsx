@@ -30,12 +30,14 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   // Load cart from localStorage on mount
   useEffect(() => {
-    const savedCart = localStorage.getItem('sleepada-cart');
-    if (savedCart) {
-      try {
-        setItems(JSON.parse(savedCart));
-      } catch (error) {
-        console.error('Failed to load cart:', error);
+    if (typeof window !== 'undefined') {
+      const savedCart = localStorage.getItem('sleepada-cart');
+      if (savedCart) {
+        try {
+          setItems(JSON.parse(savedCart));
+        } catch (error) {
+          console.error('Failed to load cart:', error);
+        }
       }
     }
     setIsLoaded(true);
@@ -43,7 +45,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   // Save cart to localStorage whenever it changes
   useEffect(() => {
-    if (isLoaded) {
+    if (isLoaded && typeof window !== 'undefined') {
       localStorage.setItem('sleepada-cart', JSON.stringify(items));
     }
   }, [items, isLoaded]);
