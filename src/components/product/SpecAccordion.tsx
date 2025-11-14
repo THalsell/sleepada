@@ -90,7 +90,6 @@ export default function SpecAccordion({ specs, layerDescription, warranty, bestF
           <li>Free shipping to continental US</li>
           <li>Compressed, rolled, and boxed for easy delivery</li>
           <li>Delivery time: 5-10 business days</li>
-          <li>White glove delivery available (contact for pricing)</li>
           <li>Ships from Tennessee facility</li>
         </ul>
       )
