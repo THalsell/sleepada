@@ -13,6 +13,8 @@ interface AddToCartButtonProps {
   price: number;
 }
 
+const SUCCESS_MESSAGE_DURATION = 3000;
+
 export default function AddToCartButton({ productId, productName, size, quantity, price }: AddToCartButtonProps) {
   const { addItem } = useCart();
   const router = useRouter();
@@ -29,11 +31,10 @@ export default function AddToCartButton({ productId, productName, size, quantity
 
     // Show success message
     setShowSuccess(true);
-    setTimeout(() => setShowSuccess(false), 3000);
+    setTimeout(() => setShowSuccess(false), SUCCESS_MESSAGE_DURATION);
   };
 
   const handleShopAmazon = () => {
-    console.log('Shop on Amazon:', { product: productId, size, quantity });
     // TODO: Add actual Amazon link
     alert('Amazon link will be added soon!');
   };

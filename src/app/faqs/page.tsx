@@ -1,27 +1,8 @@
-'use client';
-
 import { faqCategories } from '@/config/faqs';
 import FAQAccordion from '@/components/faqs/FAQAccordion';
-import { useState } from 'react';
+import FAQNavigation from '@/components/faqs/FAQNavigation';
 
 export default function FAQsPage() {
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
-
-  const scrollToCategory = (categoryId: string) => {
-    setActiveCategory(categoryId);
-    const element = document.getElementById(categoryId);
-    if (element) {
-      const offset = 120; // Account for sticky nav
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
-
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -37,25 +18,7 @@ export default function FAQsPage() {
       </section>
 
       {/* Category Navigation */}
-      <section className="bg-white py-8 px-4 sticky top-0 z-40 border-b border-gray-200">
-        <div className="mx-auto max-w-6xl">
-          <div className="flex flex-wrap gap-3 justify-center">
-            {faqCategories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => scrollToCategory(category.id)}
-                className={`px-4 py-2 rounded-full border-2 transition-all font-medium ${
-                  activeCategory === category.id
-                    ? 'bg-[var(--color-copper)] text-white border-[var(--color-copper)]'
-                    : 'border-gray-300 text-gray-700 hover:border-[var(--color-copper)] hover:text-[var(--color-copper)]'
-                }`}
-              >
-                {category.title}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQNavigation categories={faqCategories} />
 
       {/* FAQ Sections */}
       {faqCategories.map((category, index) => (

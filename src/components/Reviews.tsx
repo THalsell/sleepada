@@ -36,7 +36,7 @@ export default function Reviews() {
           alt="Background"
           fill
           className="object-cover"
-          priority={false}
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-white bg-opacity-70"></div>
       </div>

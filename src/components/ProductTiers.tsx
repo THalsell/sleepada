@@ -5,8 +5,7 @@ import { productTiersConfig } from '@/config/productTiersConfig';
 function ProductCard({ product }: { product: typeof productTiersConfig.products[0] }) {
   return (
     <div className="flex flex-col items-center h-full">
-      <h3 className="text-5xl font-semi-bold font-[family-name:var(var(--font-bodoni), serif;
-})] mb-0 text-center ">
+      <h3 className="text-5xl font-semi-bold font-[family-name:var(--font-bodoni)] mb-0 text-center">
         {product.name}
       </h3>
       <p className="text-lg text-copper font-semibold text-center mt-4 flex-1">{product.description}</p>
@@ -16,6 +15,7 @@ function ProductCard({ product }: { product: typeof productTiersConfig.products[
           alt={product.name}
           fill
           className="object-contain object-bottom transition-transform duration-300 hover:scale-105"
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 400px"
         />
       </div>
       

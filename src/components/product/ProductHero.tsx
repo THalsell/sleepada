@@ -31,6 +31,7 @@ export default function ProductHero({ product }: ProductHeroProps) {
                 fill
                 className="object-contain"
                 priority
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
             {/* Thumbnail Gallery */}
@@ -50,6 +51,7 @@ export default function ProductHero({ product }: ProductHeroProps) {
                     alt={`${product.name} view ${index + 1}`}
                     fill
                     className="object-cover"
+                    sizes="80px"
                   />
                 </button>
               ))}

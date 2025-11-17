@@ -24,6 +24,7 @@ export default function ProductCategories() {
                   alt={category.name}
                   fill
                   className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
               ) : (
                 <div className="w-full h-full bg-gray-200 flex items-center justify-center">
