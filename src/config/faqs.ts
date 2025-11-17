@@ -136,7 +136,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: "How often should I rotate my mattress?",
-        answer: "Turn and rotate your mattress every few weeks for the first few months to help smooth out contours. After that, turn and rotate periodically (every 3-6 months) to equalize wear and tear. King mattresses should be rotated one quarter turn each month — even though the mattress isn't perfectly square, it will still fit on your foundation."
+        answer: "We recommend rotating your mattress 2-4 times a year to help smooth out contours and equalize wear and tear. King mattresses should be rotated one quarter turn each time — even though the mattress isn't perfectly square, it will still fit on your foundation."
       },
       {
         question: "Can I remove the law tag?",
@@ -151,8 +151,8 @@ export const faqCategories: FAQCategory[] = [
         answer: "Yes! A quality mattress protector extends the life of your mattress and keeps it clean. Note that stains may void your warranty."
       },
       {
-        question: "How long will my Sleepada mattress last?",
-        answer: "With proper care, your Sleepada mattress should provide 7-10 years of comfortable sleep or more, depending on the model and usage."
+        question: "Mattress Lifespan",
+        answer: "The National Sleep Council recommends replacing your mattress every 8-10 years. With proper care, your Sleepada mattress is designed to provide comfortable, supportive sleep for this recommended lifespan or longer, depending on the model and usage."
       }
     ]
   },
