@@ -109,6 +109,38 @@ export interface RVProductPrices {
   customKing: number;
 }
 
+// Thickness/style variant for products
+export interface ThicknessVariant {
+  id: string;
+  name: string;
+  description: string;
+  specs?: Partial<ProductSpecs>; // Optional specs that override base specs
+  layerDescription?: string; // Optional layer description override
+}
+
+export interface RVProductWithVariants {
+  id: string;
+  name: string;
+  slug: string;
+  tagline: string;
+  description: string;
+  images: string[];
+  // Prices organized by thickness variant
+  variants: {
+    [variantId: string]: {
+      info: ThicknessVariant;
+      prices: RVProductPrices;
+    };
+  };
+  features: string[];
+  specs: ProductSpecs;
+  reviews: ProductReview[];
+  layerDescription: string;
+  warranty: string;
+  bestFor: string;
+  isRV: true;
+}
+
 export interface RVProduct {
   id: string;
   name: string;
@@ -214,12 +246,14 @@ export interface TopperProduct {
 }
 
 // Pet bed specific sizes
-export type PetSizeOption = 'small' | 'medium' | 'large';
+export type PetSizeOption = 'medium' | 'large' | 'extraLarge';
+export type PetThicknessOption = '3inch' | '5inch';
+export type PetStyleOption = 'basic' | 'infrared';
 
 export interface PetProductPrices {
-  small: number;
   medium: number;
   large: number;
+  extraLarge: number;
 }
 
 export interface PetProduct {
@@ -234,6 +268,41 @@ export interface PetProduct {
   specs: ProductSpecs;
   reviews: ProductReview[];
   layerDescription: string;
+  warranty: string;
+  bestFor: string;
+  isPet: true;
+}
+
+// Pet bed with style and thickness variants
+export interface PetBedVariant {
+  id: string;
+  name: string;
+  description: string;
+  features?: string[];
+}
+
+export interface PetProductWithVariants {
+  id: string;
+  name: string;
+  slug: string;
+  tagline: string;
+  description: string;
+  images: string[];
+  // Organized by style, then thickness, then size
+  variants: {
+    [style in PetStyleOption]: {
+      info: PetBedVariant;
+      thicknesses: {
+        [thickness in PetThicknessOption]: {
+          info: PetBedVariant;
+          prices: PetProductPrices;
+        };
+      };
+    };
+  };
+  embroideryPrice: number; // Additional cost for embroidery
+  specs: ProductSpecs;
+  reviews: ProductReview[];
   warranty: string;
   bestFor: string;
   isPet: true;

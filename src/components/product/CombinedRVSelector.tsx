@@ -1,21 +1,30 @@
 'use client';
 
-import { useState } from 'react';
 import { RVSizeOption } from '@/types/product';
 
 type RVTier = 'core' | 'prime' | 'fir-plus';
+type ThicknessOption = '6inch' | '8inch' | '10inch';
 
 interface CombinedRVSelectorProps {
-  onSelectionChange: (tier: RVTier, size: RVSizeOption) => void;
-  prices: Record<RVTier, Record<RVSizeOption, number>>;
+  onSelectionChange: (tier: RVTier, thickness: ThicknessOption, size: RVSizeOption) => void;
+  prices: Record<RVTier, Record<ThicknessOption, Record<RVSizeOption, number>> | Record<RVSizeOption, number>>;
   selectedTier: RVTier;
+  selectedThickness: ThicknessOption;
   selectedSize: RVSizeOption;
+  // Optional: if true, shows thickness selector. If false or undefined, hides it for backward compatibility
+  showThicknessSelector?: boolean;
 }
 
 const tierLabels: Record<RVTier, string> = {
   'core': 'Sleepada RV Core - Entry-Level Comfort',
   'prime': 'Sleepada RV Prime - Gel-Infused Cooling',
   'fir-plus': 'Sleepada RV FIR+ - Premium Recovery Tech'
+};
+
+const thicknessLabels: Record<ThicknessOption, { name: string; description: string }> = {
+  '6inch': { name: '6"', description: 'Compact design - perfect for tight spaces' },
+  '8inch': { name: '8"', description: 'Standard comfort - ideal balance' },
+  '10inch': { name: '10"', description: 'Premium luxury - maximum comfort' }
 };
 
 const rvSizeLabels: Record<RVSizeOption, { name: string; dimensions: string }> = {
@@ -56,9 +65,12 @@ export default function CombinedRVSelector({
   onSelectionChange,
   prices,
   selectedTier,
-  selectedSize
+  selectedThickness,
+  selectedSize,
+  showThicknessSelector = true
 }: CombinedRVSelectorProps) {
   const tiers: RVTier[] = ['core', 'prime', 'fir-plus'];
+  const thicknesses: ThicknessOption[] = ['6inch', '8inch', '10inch'];
   const sizes: RVSizeOption[] = [
     'twin',
     'twinXL',
@@ -93,14 +105,22 @@ export default function CombinedRVSelector({
     'customKing'
   ];
 
-  const currentPrice = prices[selectedTier][selectedSize];
+  // Handle both new variant structure and old flat structure
+  const tierPrices = prices[selectedTier];
+  const currentPrice = (selectedThickness in tierPrices && typeof tierPrices[selectedThickness as keyof typeof tierPrices] === 'object')
+    ? (tierPrices as Record<ThicknessOption, Record<RVSizeOption, number>>)[selectedThickness][selectedSize]
+    : (tierPrices as Record<RVSizeOption, number>)[selectedSize];
 
   const handleTierChange = (tier: RVTier) => {
-    onSelectionChange(tier, selectedSize);
+    onSelectionChange(tier, selectedThickness, selectedSize);
+  };
+
+  const handleThicknessChange = (thickness: ThicknessOption) => {
+    onSelectionChange(selectedTier, thickness, selectedSize);
   };
 
   const handleSizeChange = (size: RVSizeOption) => {
-    onSelectionChange(selectedTier, size);
+    onSelectionChange(selectedTier, selectedThickness, size);
   };
 
   return (
@@ -140,6 +160,35 @@ export default function CombinedRVSelector({
           </div>
         </div>
       </div>
+
+      {/* Thickness Selector - Only show if enabled */}
+      {showThicknessSelector && (
+      <div>
+        <label className="text-lg font-semibold mb-3 block text-[var(--color-hero-navy)]">
+          Select Thickness
+        </label>
+        <div className="grid grid-cols-3 gap-3">
+          {thicknesses.map((thickness) => (
+            <button
+              key={thickness}
+              onClick={() => handleThicknessChange(thickness)}
+              className={`p-4 rounded-lg border-2 text-center transition-all ${
+                selectedThickness === thickness
+                  ? 'border-[var(--color-copper)] bg-[var(--color-copper)]/5'
+                  : 'border-gray-300 hover:border-gray-400'
+              }`}
+            >
+              <div className="font-semibold text-[var(--color-hero-navy)]">
+                {thicknessLabels[thickness].name}
+              </div>
+              <div className="text-sm text-gray-600 mt-1">
+                {thicknessLabels[thickness].description}
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
+      )}
 
       {/* Size Selector */}
       <div>

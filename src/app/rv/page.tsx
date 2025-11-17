@@ -11,6 +11,7 @@ import QuantitySelector from '@/components/product/QuantitySelector';
 import AddToCartButton from '@/components/product/AddToCartButton';
 
 type RVTier = 'core' | 'prime' | 'fir-plus';
+type ThicknessOption = '6inch' | '8inch' | '10inch';
 
 const rvProducts = {
   core: rvCoreProduct,
@@ -62,23 +63,38 @@ const tierInfo = {
 
 export default function RVPage() {
   const [selectedTier, setSelectedTier] = useState<RVTier>('prime');
+  const [selectedThickness, setSelectedThickness] = useState<ThicknessOption>('8inch');
   const [selectedSize, setSelectedSize] = useState<RVSizeOption>('shortQueen');
   const [quantity, setQuantity] = useState(1);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-  const handleSelectionChange = (tier: RVTier, size: RVSizeOption) => {
+  const handleSelectionChange = (tier: RVTier, thickness: ThicknessOption, size: RVSizeOption) => {
     setSelectedTier(tier);
+    setSelectedThickness(thickness);
     setSelectedSize(size);
   };
 
   const prices = {
-    core: rvCoreProduct.prices,
-    prime: rvPrimeProduct.prices,
-    'fir-plus': rvFirPlusProduct.prices
+    core: {
+      '6inch': rvCoreProduct.variants['6inch'].prices,
+      '8inch': rvCoreProduct.variants['8inch'].prices,
+      '10inch': rvCoreProduct.variants['10inch'].prices
+    },
+    prime: {
+      '6inch': rvPrimeProduct.variants['6inch'].prices,
+      '8inch': rvPrimeProduct.variants['8inch'].prices,
+      '10inch': rvPrimeProduct.variants['10inch'].prices
+    },
+    'fir-plus': {
+      '6inch': rvFirPlusProduct.variants['6inch'].prices,
+      '8inch': rvFirPlusProduct.variants['8inch'].prices,
+      '10inch': rvFirPlusProduct.variants['10inch'].prices
+    }
   };
 
   const currentProduct = rvProducts[selectedTier];
-  const currentPrice = currentProduct.prices[selectedSize];
+  // All tiers now use variant structure
+  const currentPrice = (prices[selectedTier] as any)[selectedThickness][selectedSize];
   const currentInfo = tierInfo[selectedTier];
 
   return (
@@ -160,9 +176,11 @@ export default function RVPage() {
               {/* Combined Tier and Size Selector */}
               <CombinedRVSelector
                 selectedTier={selectedTier}
+                selectedThickness={selectedThickness}
                 selectedSize={selectedSize}
                 onSelectionChange={handleSelectionChange}
-                prices={prices}
+                prices={prices as any}
+                showThicknessSelector={true} // Always show thickness buttons
               />
 
               {/* Quantity Selector */}

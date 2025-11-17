@@ -24,20 +24,72 @@ export default function PetPage() {
           <h2 className="text-4xl font-[family-name:var(--font-cormorant-garamond)] text-center mb-12 text-[var(--color-hero-navy)]">
             Choose Your Perfect Pet Bed
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             {/* Left Side - Product Image */}
             <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-lg">
               <Image
                 src="/images/petbed.png"
                 alt="Premium Pet Bed"
                 fill
-                className="object-contain"
+                className="object-contain object-top"
               />
             </div>
 
             {/* Right Side - Product Selector */}
             <div>
               <CombinedPetSelector />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Infrared Technology Explanation Section */}
+      <section className="py-16 px-4 bg-white">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-4xl font-[family-name:var(--font-cormorant-garamond)] text-center mb-12 text-[var(--color-hero-navy)]">
+            What is Infrared Technology?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch mb-8">
+            {/* Image */}
+            <div className="relative w-full min-h-[400px] rounded-lg overflow-hidden shadow-lg">
+              <Image
+                src="/images/pet-infrared.png"
+                alt="Infrared Technology for Pet Beds"
+                fill
+                className="object-contain"
+              />
+            </div>
+            {/* Text Content */}
+            <div className="bg-[var(--color-cream)] p-8 rounded-lg flex flex-col justify-center">
+              <p className="text-lg text-gray-700 leading-relaxed mb-4">
+                An infrared pet bed uses your pet&apos;s body heat to reflect far infrared (FIR) rays back into their body, which can help with pain relief, inflammation, and circulation.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed mb-4">
+                These beds are beneficial for pets with conditions like arthritis, hip dysplasia, or muscle pain, but are also suitable for any pet that needs extra comfort or warmth.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Our infrared beds are non-heated and use your pet&apos;s own body heat with FIR technology - providing therapeutic benefits naturally without electricity or cords.
+              </p>
+            </div>
+          </div>
+
+          {/* Fabric Close-up Image */}
+          <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg">
+            <Image
+              src="/images/infrared-fabric.webp"
+              alt="FIR-Infused Fabric Close-up"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-6">
+              <div className="text-center">
+                <h3 className="text-3xl font-[family-name:var(--font-cormorant-garamond)] font-bold text-white mb-3">
+                  FIR-Infused Fabric
+                </h3>
+                <p className="text-white text-lg leading-relaxed max-w-2xl mx-auto">
+                  Our premium cover is infused with Far Infrared technology that uses your pet&apos;s body heat to promote circulation and wellness
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -86,7 +138,7 @@ export default function PetPage() {
                 Multiple Sizes
               </h3>
               <p className="text-gray-700">
-                From small cats and toy breeds to large dogs, we offer sizes to fit your pet perfectly. Custom sizes available upon request.
+                From medium to extra large sizes, we offer beds to fit your pet perfectly. Custom sizes available upon request.
               </p>
             </div>
           </div>

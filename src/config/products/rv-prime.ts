@@ -1,6 +1,6 @@
-import { RVProduct } from '@/types/product';
+import { RVProductWithVariants } from '@/types/product';
 
-export const rvPrimeProduct: RVProduct = {
+export const rvPrimeProduct: RVProductWithVariants = {
   id: 'rv-prime',
   name: 'Sleepada RV Prime',
   slug: 'rv-prime',
@@ -12,38 +12,130 @@ export const rvPrimeProduct: RVProduct = {
     '/images/RV-mattress.png',
     '/images/RV-mattress.png'
   ],
-  prices: {
-    twin: 499,           // 38x75
-    twinXL: 509,         // 38x80
-    full: 549,           // 54x75
-    fullXL: 559,         // 54x80
-    customFull: 579,
-    shortQueen: 599,     // 60x75
-    queen: 649,          // 66x80
-    rv28x75: 419,        // 28x75
-    rv30x75: 429,        // 30x75
-    rv30x80: 439,        // 30x80
-    rv32x75: 439,        // 32x75
-    rv34x75: 449,        // 34x75
-    rv35x80: 459,        // 35x80
-    rv36x75: 459,        // 36x75
-    rv36x80: 469,        // 36x80
-    rv38x72: 459,        // 38x72
-    rv39x80: 509,        // 39x80
-    rv42x72: 479,        // 42x72
-    rv42x75: 489,        // 42x75
-    rv42x80: 499,        // 42x80
-    rv48x72: 519,        // 48x72
-    rv48x73: 519,        // 48x73
-    rv48x75: 529,        // 48x75
-    rv48x80: 549,        // 48x80
-    rv70x75: 659,        // 70x75
-    rv70x80: 679,        // 70x80
-    rvShortKing: 679,    // 72x75
-    rvKing: 699,         // 72x80
-    calKing: 729,        // 72x84
-    standardKing: 719,   // 76x80
-    customKing: 749
+  variants: {
+    '6inch': {
+      info: {
+        id: '6inch',
+        name: '6 inch',
+        description: 'Compact 6" gel-infused design for tight RV spaces',
+        layerDescription: '2" gel-infused memory foam comfort layer over 4" supportive base foam',
+      },
+      prices: {
+        twin: 439,
+        twinXL: 449,
+        full: 489,
+        fullXL: 499,
+        customFull: 519,
+        shortQueen: 539,
+        queen: 589,
+        rv28x75: 359,
+        rv30x75: 369,
+        rv30x80: 379,
+        rv32x75: 379,
+        rv34x75: 389,
+        rv35x80: 399,
+        rv36x75: 399,
+        rv36x80: 409,
+        rv38x72: 399,
+        rv39x80: 449,
+        rv42x72: 419,
+        rv42x75: 429,
+        rv42x80: 439,
+        rv48x72: 459,
+        rv48x73: 459,
+        rv48x75: 469,
+        rv48x80: 489,
+        rv70x75: 599,
+        rv70x80: 619,
+        rvShortKing: 619,
+        rvKing: 639,
+        calKing: 669,
+        standardKing: 659,
+        customKing: 689
+      }
+    },
+    '8inch': {
+      info: {
+        id: '8inch',
+        name: '8 inch',
+        description: 'Standard 8" gel-infused comfort - ideal cooling balance',
+        layerDescription: '3" gel-infused memory foam comfort layer over 5" supportive base foam',
+      },
+      prices: {
+        twin: 499,
+        twinXL: 509,
+        full: 549,
+        fullXL: 559,
+        customFull: 579,
+        shortQueen: 599,
+        queen: 649,
+        rv28x75: 419,
+        rv30x75: 429,
+        rv30x80: 439,
+        rv32x75: 439,
+        rv34x75: 449,
+        rv35x80: 459,
+        rv36x75: 459,
+        rv36x80: 469,
+        rv38x72: 459,
+        rv39x80: 509,
+        rv42x72: 479,
+        rv42x75: 489,
+        rv42x80: 499,
+        rv48x72: 519,
+        rv48x73: 519,
+        rv48x75: 529,
+        rv48x80: 549,
+        rv70x75: 659,
+        rv70x80: 679,
+        rvShortKing: 679,
+        rvKing: 699,
+        calKing: 729,
+        standardKing: 719,
+        customKing: 749
+      }
+    },
+    '10inch': {
+      info: {
+        id: '10inch',
+        name: '10 inch',
+        description: 'Premium 10" gel-infused luxury - maximum cooling comfort',
+        layerDescription: '4" gel-infused memory foam comfort layer over 6" supportive base foam',
+      },
+      prices: {
+        twin: 559,
+        twinXL: 569,
+        full: 609,
+        fullXL: 619,
+        customFull: 639,
+        shortQueen: 659,
+        queen: 709,
+        rv28x75: 479,
+        rv30x75: 489,
+        rv30x80: 499,
+        rv32x75: 499,
+        rv34x75: 509,
+        rv35x80: 519,
+        rv36x75: 519,
+        rv36x80: 529,
+        rv38x72: 519,
+        rv39x80: 569,
+        rv42x72: 539,
+        rv42x75: 549,
+        rv42x80: 559,
+        rv48x72: 579,
+        rv48x73: 579,
+        rv48x75: 589,
+        rv48x80: 609,
+        rv70x75: 719,
+        rv70x80: 739,
+        rvShortKing: 739,
+        rvKing: 759,
+        calKing: 789,
+        standardKing: 779,
+        customKing: 809
+      }
+    }
   },
   features: [
     'Medium Support',
