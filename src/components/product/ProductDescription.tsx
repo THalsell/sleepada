@@ -22,7 +22,7 @@ export default function ProductDescription({ description, layerDescription }: Pr
       <section className="py-16 px-4 bg-[var(--color-cream)]">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-3xl font-[family-name:var(--font-cormorant-garamond)] text-center mb-8 text-[var(--color-hero-navy)]">
-            What's Inside
+            What&apos;s Inside
           </h2>
           <div className="bg-white p-8 rounded-lg shadow-sm text-center">
             <p className="text-lg text-gray-700 mb-4">{layerDescription}</p>

@@ -1,11 +1,11 @@
 import { ProductReview } from '@/types/product';
+import Link from 'next/link';
 
 interface ProductReviewsProps {
   reviews: ProductReview[];
-  productName: string;
 }
 
-export default function ProductReviews({ reviews, productName }: ProductReviewsProps) {
+export default function ProductReviews({ reviews }: ProductReviewsProps) {
   return (
     <section className="py-16 px-4 bg-white">
       <div className="mx-auto max-w-6xl">
@@ -20,7 +20,7 @@ export default function ProductReviews({ reviews, productName }: ProductReviewsP
                   <span key={i} className="text-yellow-400 text-xl">★</span>
                 ))}
               </div>
-              <p className="text-gray-700 italic mb-4">"{review.text}"</p>
+              <p className="text-gray-700 italic mb-4">&ldquo;{review.text}&rdquo;</p>
               <p className="text-sm font-semibold text-[var(--color-hero-navy)]">
                 {review.author}
               </p>
@@ -29,9 +29,9 @@ export default function ProductReviews({ reviews, productName }: ProductReviewsP
           ))}
         </div>
         <div className="text-center">
-          <a href="/#reviews" className="text-[var(--color-copper)] hover:underline font-semibold">
+          <Link href="/#reviews" className="text-[var(--color-copper)] hover:underline font-semibold">
             Read All Reviews →
-          </a>
+          </Link>
         </div>
       </div>
     </section>

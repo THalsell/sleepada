@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { RVSizeOption } from '@/types/product';
+import { RVSizeOption, RVProductPrices } from '@/types/product';
 import { rvCoreProduct } from '@/config/products/rv-core';
 import { rvPrimeProduct } from '@/config/products/rv-prime';
 import { rvFirPlusProduct } from '@/config/products/rv-fir-plus';
@@ -12,6 +12,11 @@ import AddToCartButton from '@/components/product/AddToCartButton';
 
 type RVTier = 'core' | 'prime' | 'fir-plus';
 type ThicknessOption = '6inch' | '8inch' | '10inch';
+type RVPriceStructure = {
+  [key in RVTier]: {
+    [key in ThicknessOption]: RVProductPrices;
+  };
+};
 
 const rvProducts = {
   core: rvCoreProduct,
@@ -74,7 +79,7 @@ export default function RVPage() {
     setSelectedSize(size);
   };
 
-  const prices = {
+  const prices: RVPriceStructure = {
     core: {
       '6inch': rvCoreProduct.variants['6inch'].prices,
       '8inch': rvCoreProduct.variants['8inch'].prices,
@@ -94,7 +99,7 @@ export default function RVPage() {
 
   const currentProduct = rvProducts[selectedTier];
   // All tiers now use variant structure
-  const currentPrice = (prices[selectedTier] as any)[selectedThickness][selectedSize];
+  const currentPrice = prices[selectedTier][selectedThickness][selectedSize];
   const currentInfo = tierInfo[selectedTier];
 
   return (
@@ -179,7 +184,7 @@ export default function RVPage() {
                 selectedThickness={selectedThickness}
                 selectedSize={selectedSize}
                 onSelectionChange={handleSelectionChange}
-                prices={prices as any}
+                prices={prices}
                 showThicknessSelector={true} // Always show thickness buttons
               />
 

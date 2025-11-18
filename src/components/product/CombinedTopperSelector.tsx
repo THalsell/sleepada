@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { TopperSizeOption, TopperProductWithSizes } from '@/types/product';
+import { TopperSizeOption } from '@/types/product';
 import { topperMemoryGraphiteProduct } from '@/config/products/topper-memory-graphite';
 import { topperMemoryCopperProduct } from '@/config/products/topper-memory-copper';
 import { topperMemoryGelProduct } from '@/config/products/topper-memory-gel';
@@ -229,7 +229,7 @@ export default function CombinedTopperSelector() {
           Contact Us for Pricing
         </a>
         <p className="text-sm text-gray-600 mt-3">
-          Custom sizes available. We'll respond within 24 hours.
+          Custom sizes available. We&apos;ll respond within 24 hours.
         </p>
       </div>
     </div>

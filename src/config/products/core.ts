@@ -14,6 +14,7 @@ export const coreProduct: Product = {
   ],
   prices: {
     twin: 299,
+    twinXL: 319,
     full: 349,
     queen: 399,
     king: 449,

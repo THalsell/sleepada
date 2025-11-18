@@ -66,7 +66,6 @@ export default async function ProductPage({ params }: PageProps) {
       />
       <SpecAccordion
         specs={product.specs}
-        layerDescription={product.layerDescription}
         warranty={product.warranty}
         bestFor={product.bestFor}
       />

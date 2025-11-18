@@ -14,6 +14,7 @@ export const condoFirPlusProduct: CondoProduct = {
   ],
   prices: {
     twin: 749,
+    twinXL: 769,
     full: 849,
     queen: 949,
     king: 1049,

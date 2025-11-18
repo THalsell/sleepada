@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { SizeOption } from '@/types/product';
 
 type CondoTier = 'core' | 'prime' | 'fir-plus';
@@ -20,6 +19,7 @@ const tierLabels: Record<CondoTier, string> = {
 
 const sizeLabels: Record<SizeOption, { name: string; dimensions: string }> = {
   twin: { name: 'Twin', dimensions: '39" × 75"' },
+  twinXL: { name: 'Twin XL', dimensions: '39" × 80"' },
   full: { name: 'Full', dimensions: '54" × 75"' },
   queen: { name: 'Queen', dimensions: '60" × 80"' },
   king: { name: 'King', dimensions: '76" × 80"' },
@@ -33,7 +33,7 @@ export default function CombinedCondoSelector({
   selectedSize
 }: CombinedCondoSelectorProps) {
   const tiers: CondoTier[] = ['core', 'prime', 'fir-plus'];
-  const sizes: SizeOption[] = ['twin', 'full', 'queen', 'king', 'calKing'];
+  const sizes: SizeOption[] = ['twin', 'twinXL', 'full', 'queen', 'king', 'calKing'];
 
   const currentPrice = prices[selectedTier][selectedSize];
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, useRef, ReactNode } from 'react';
 import { SizeOption, RVSizeOption, DormSizeOption, PillowSizeOption, PetSizeOption } from '@/types/product';
 
 export interface CartItem {
@@ -25,30 +25,33 @@ interface CartContextType {
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [items, setItems] = useState<CartItem[]>([]);
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  // Load cart from localStorage on mount
-  useEffect(() => {
+  // Load cart from localStorage on initial mount using useState initializer
+  const [items, setItems] = useState<CartItem[]>(() => {
     if (typeof window !== 'undefined') {
       const savedCart = localStorage.getItem('sleepada-cart');
       if (savedCart) {
         try {
-          setItems(JSON.parse(savedCart));
+          return JSON.parse(savedCart);
         } catch (error) {
           console.error('Failed to load cart:', error);
         }
       }
     }
-    setIsLoaded(true);
-  }, []);
+    return [];
+  });
+  const isFirstRender = useRef(true);
 
-  // Save cart to localStorage whenever it changes
+  // Save cart to localStorage whenever it changes (skip first render)
   useEffect(() => {
-    if (isLoaded && typeof window !== 'undefined') {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+
+    if (typeof window !== 'undefined') {
       localStorage.setItem('sleepada-cart', JSON.stringify(items));
     }
-  }, [items, isLoaded]);
+  }, [items]);
 
   const addItem = (item: Omit<CartItem, 'id'>) => {
     setItems((prevItems) => {

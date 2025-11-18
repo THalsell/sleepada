@@ -1,7 +1,6 @@
 'use client';
 
 import { useCart } from '@/contexts/CartContext';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export default function CartPage() {
@@ -137,7 +136,7 @@ export default function CartPage() {
 
               <div className="mt-6 pt-6 border-t border-gray-300">
                 <p className="text-sm text-gray-600">
-                  <span className="font-semibold">Note:</span> Please contact us via email to finalize your order. We'll get back to you within 24 hours!
+                  <span className="font-semibold">Note:</span> Please contact us via email to finalize your order. We&apos;ll get back to you within 24 hours!
                 </p>
               </div>
             </div>

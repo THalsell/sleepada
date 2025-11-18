@@ -45,7 +45,7 @@ export default function FAQsPage() {
             Still Have Questions?
           </h2>
           <p className="text-xl mb-8">
-            Our team is here to help. Reach out and we'll get back to you quickly.
+            Our team is here to help. Reach out and we&apos;ll get back to you quickly.
           </p>
           <a
             href="mailto:sleepadasales@gmail.com"

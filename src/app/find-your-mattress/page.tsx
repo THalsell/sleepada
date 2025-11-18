@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import type { Metadata } from 'next';
 import Link from 'next/link';
 
 const questions = [
@@ -281,7 +280,7 @@ export default function FindYourMattressPage() {
 
           {/* Skip Quiz Option */}
           <div className="mt-8 text-center">
-            <p className="text-gray-600 mb-4">Not sure? That's okay!</p>
+            <p className="text-gray-600 mb-4">Not sure? That&apos;s okay!</p>
             <Link
               href="/"
               className="text-[var(--color-copper)] hover:underline font-semibold"

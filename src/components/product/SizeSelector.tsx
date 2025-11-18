@@ -8,6 +8,7 @@ interface SizeSelectorProps {
 
 const sizeLabels: Record<SizeOption, string> = {
   twin: 'Twin',
+  twinXL: 'Twin XL',
   full: 'Full',
   queen: 'Queen',
   king: 'King',
@@ -15,7 +16,7 @@ const sizeLabels: Record<SizeOption, string> = {
 };
 
 export default function SizeSelector({ selectedSize, onSizeChange, prices }: SizeSelectorProps) {
-  const sizes: SizeOption[] = ['twin', 'full', 'queen', 'king', 'calKing'];
+  const sizes: SizeOption[] = ['twin', 'twinXL', 'full', 'queen', 'king', 'calKing'];
 
   return (
     <div className="mb-6">

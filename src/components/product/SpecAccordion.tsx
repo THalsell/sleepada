@@ -10,12 +10,11 @@ interface AccordionSection {
 
 interface SpecAccordionProps {
   specs: ProductSpecs;
-  layerDescription: string;
   warranty: string;
   bestFor: string;
 }
 
-export default function SpecAccordion({ specs, layerDescription, warranty, bestFor }: SpecAccordionProps) {
+export default function SpecAccordion({ specs, warranty, bestFor }: SpecAccordionProps) {
   const [openSection, setOpenSection] = useState<number | null>(null);
 
   const toggleSection = (index: number) => {
@@ -39,11 +38,11 @@ export default function SpecAccordion({ specs, layerDescription, warranty, bestF
       title: 'Dimensions & Weight',
       content: (
         <div className="space-y-2 text-gray-700">
-          <p><strong>Twin:</strong> 38" x 75" x 10" | Weight: [Contact for details]</p>
-          <p><strong>Full:</strong> 54" x 75" x 10" | Weight: [Contact for details]</p>
-          <p><strong>Queen:</strong> 60" x 80" x 10" | Weight: [Contact for details]</p>
-          <p><strong>King:</strong> 76" x 80" x 10" | Weight: [Contact for details]</p>
-          <p><strong>Cal King:</strong> 72" x 84" x 10" | Weight: [Contact for details]</p>
+          <p><strong>Twin:</strong> 38&quot; x 75&quot; x 10&quot; | Weight: [Contact for details]</p>
+          <p><strong>Full:</strong> 54&quot; x 75&quot; x 10&quot; | Weight: [Contact for details]</p>
+          <p><strong>Queen:</strong> 60&quot; x 80&quot; x 10&quot; | Weight: [Contact for details]</p>
+          <p><strong>King:</strong> 76&quot; x 80&quot; x 10&quot; | Weight: [Contact for details]</p>
+          <p><strong>Cal King:</strong> 72&quot; x 84&quot; x 10&quot; | Weight: [Contact for details]</p>
           <p className="text-sm italic mt-3">Contact us for exact weight specifications</p>
         </div>
       )

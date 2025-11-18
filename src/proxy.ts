@@ -36,7 +36,7 @@ export function proxy(request: NextRequest) {
 
   // Decode the credentials
   const decoded = Buffer.from(credentials, 'base64').toString('utf-8');
-  const [username, password] = decoded.split(':');
+  const [, password] = decoded.split(':');
 
   // Check if password matches (username can be anything)
   if (password === sitePassword) {

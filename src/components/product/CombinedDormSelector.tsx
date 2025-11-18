@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { DormSizeOption } from '@/types/product';
 
 type DormTier = 'core' | 'prime' | 'fir-plus';

@@ -56,7 +56,7 @@ export default function Reviews() {
             ))}
           </div>
           <p className="text-gray-700 text-lg md:text-xl mb-6 italic px-4">
-            "{reviews[currentReview].text}"
+            &ldquo;{reviews[currentReview].text}&rdquo;
           </p>
           <p className="text-[var(--color-hero-navy)] font-semibold">
             {reviews[currentReview].name}

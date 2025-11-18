@@ -14,6 +14,7 @@ export const primeProduct: Product = {
   ],
   prices: {
     twin: 499,
+    twinXL: 519,
     full: 549,
     queen: 649,
     king: 749,
