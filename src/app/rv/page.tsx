@@ -106,15 +106,15 @@ export default function RVPage() {
     <div className="min-h-screen bg-white">
       {/* Hero Header */}
       <section
-        className="bg-[var(--color-hero-navy)] text-[var(--color-cream)] py-24 md:py-32 px-4 relative bg-cover bg-center"
+        className="bg-[var(--color-hero-navy)] text-[var(--color-cream)] py-16 md:py-32 px-4 relative bg-cover bg-center min-h-[300px] md:min-h-[400px]"
         style={{ backgroundImage: 'url(/images/rv-hero.png)' }}
       >
         <div className="absolute inset-0 bg-black/40"></div>
-        <div className="mx-auto max-w-4xl text-center relative z-10">
-          <h1 className="text-5xl md:text-6xl font-[family-name:var(--font-cormorant-garamond)] mb-4">
+        <div className="mx-auto max-w-4xl text-center relative z-10 flex flex-col justify-center h-full min-h-[300px] md:min-h-[400px]">
+          <h1 className="text-4xl md:text-6xl font-[family-name:var(--font-cormorant-garamond)] mb-4">
             Sleep Better on the Road
           </h1>
-          <p className="text-xl">
+          <p className="text-lg md:text-xl">
             Custom RV Mattresses Made for Adventure
           </p>
         </div>
