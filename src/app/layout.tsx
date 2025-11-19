@@ -55,7 +55,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${montserrat.variable} ${cormorant.variable} ${bodoni.variable}`}>
-      <body>
+      <body suppressHydrationWarning>
         <CartProvider>
           <Navbar />
           <Breadcrumbs />
