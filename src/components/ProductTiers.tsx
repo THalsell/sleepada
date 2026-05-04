@@ -15,7 +15,7 @@ function ProductCard({ product }: { product: typeof productTiersConfig.products[
           alt={product.name}
           fill
           className="object-contain object-bottom transition-transform duration-300 hover:scale-105"
-          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 400px"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
         />
       </div>
       
@@ -33,7 +33,7 @@ export default function ProductTiers() {
   return (
     <section id="products" className=" py-16 px-4" style={{ background: 'var(--color-cream)' }}>
       <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {productTiersConfig.products.map((product) => (
             <ProductCard key={product.name} product={product} />
           ))}

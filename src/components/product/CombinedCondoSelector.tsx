@@ -1,12 +1,12 @@
 'use client';
 
-import { SizeOption } from '@/types/product';
+import { SizeOption, ProductPrices } from '@/types/product';
 
 type CondoTier = 'core' | 'prime' | 'fir-plus';
 
 interface CombinedCondoSelectorProps {
   onSelectionChange: (tier: CondoTier, size: SizeOption) => void;
-  prices: Record<CondoTier, Record<SizeOption, number>>;
+  prices: Record<CondoTier, ProductPrices>;
   selectedTier: CondoTier;
   selectedSize: SizeOption;
 }
@@ -21,6 +21,7 @@ const sizeLabels: Record<SizeOption, { name: string; dimensions: string }> = {
   twin: { name: 'Twin', dimensions: '39" × 75"' },
   twinXL: { name: 'Twin XL', dimensions: '39" × 80"' },
   full: { name: 'Full', dimensions: '54" × 75"' },
+  fullXL: { name: 'Full XL', dimensions: '54" × 80"' },
   queen: { name: 'Queen', dimensions: '60" × 80"' },
   king: { name: 'King', dimensions: '76" × 80"' },
   calKing: { name: 'Cal King', dimensions: '72" × 84"' }
@@ -33,9 +34,10 @@ export default function CombinedCondoSelector({
   selectedSize
 }: CombinedCondoSelectorProps) {
   const tiers: CondoTier[] = ['core', 'prime', 'fir-plus'];
-  const sizes: SizeOption[] = ['twin', 'twinXL', 'full', 'queen', 'king', 'calKing'];
+  const allSizes: SizeOption[] = ['twin', 'twinXL', 'full', 'fullXL', 'queen', 'king', 'calKing'];
+  const sizes = allSizes.filter((size) => prices[selectedTier][size] !== undefined);
 
-  const currentPrice = prices[selectedTier][selectedSize];
+  const currentPrice = prices[selectedTier][selectedSize] ?? 0;
 
   const handleTierChange = (tier: CondoTier) => {
     onSelectionChange(tier, selectedSize);

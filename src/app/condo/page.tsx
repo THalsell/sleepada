@@ -78,7 +78,7 @@ export default function CondoPage() {
   };
 
   const currentProduct = condoProducts[selectedTier];
-  const currentPrice = currentProduct.prices[selectedSize];
+  const currentPrice = currentProduct.prices[selectedSize] ?? 0;
   const currentInfo = tierInfo[selectedTier];
 
   return (

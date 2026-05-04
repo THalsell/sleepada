@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import { coreProduct } from '@/config/products/core';
 import { primeProduct } from '@/config/products/prime';
 import { firPlusProduct } from '@/config/products/fir-plus';
+import { cooling8Product } from '@/config/products/cooling-8';
 import ProductHero from '@/components/product/ProductHero';
 import KeyFeatures from '@/components/product/KeyFeatures';
 import ProductDescription from '@/components/product/ProductDescription';
@@ -16,6 +17,7 @@ const products: Record<string, Product> = {
   'core': coreProduct,
   'prime': primeProduct,
   'fir-plus': firPlusProduct,
+  'cooling-8': cooling8Product,
 };
 
 interface PageProps {
@@ -29,6 +31,7 @@ export async function generateStaticParams() {
     { slug: 'core' },
     { slug: 'prime' },
     { slug: 'fir-plus' },
+    { slug: 'cooling-8' },
   ];
 }
 

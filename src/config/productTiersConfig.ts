@@ -9,6 +9,13 @@ export const productTiersConfig = {
       link: '/products/core',
     },
     {
+      name: 'Sleepada 8" Cooling',
+      image: '/images/8_cooling.png',
+      description: 'Graphite-infused for cooler sleep',
+      price: '$380-560',
+      link: '/products/cooling-8',
+    },
+    {
       name: 'Sleepada Prime',
       image: '/images/sleepada-prime.png',
       description: 'Gel-infused or copper-infused for cooling',

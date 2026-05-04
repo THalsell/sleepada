@@ -2,13 +2,14 @@ import Link from 'next/link';
 import { coreProduct } from '@/config/products/core';
 import { primeProduct } from '@/config/products/prime';
 import { firPlusProduct } from '@/config/products/fir-plus';
+import { cooling8Product } from '@/config/products/cooling-8';
 
 interface ProductComparisonProps {
   currentProductId: string;
 }
 
 export default function ProductComparison({ currentProductId }: ProductComparisonProps) {
-  const products = [coreProduct, primeProduct, firPlusProduct];
+  const products = [coreProduct, cooling8Product, primeProduct, firPlusProduct];
 
   return (
     <section className="py-16 px-4 bg-[var(--color-cream)]">
@@ -16,7 +17,7 @@ export default function ProductComparison({ currentProductId }: ProductCompariso
         <h2 className="text-3xl font-[family-name:var(--font-cormorant-garamond)] text-center mb-12 text-[var(--color-hero-navy)]">
           How Does It Compare?
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product) => (
             <div
               key={product.id}

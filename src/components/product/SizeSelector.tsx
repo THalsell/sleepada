@@ -10,13 +10,15 @@ const sizeLabels: Record<SizeOption, string> = {
   twin: 'Twin',
   twinXL: 'Twin XL',
   full: 'Full',
+  fullXL: 'Full XL',
   queen: 'Queen',
   king: 'King',
   calKing: 'Cal King'
 };
 
 export default function SizeSelector({ selectedSize, onSizeChange, prices }: SizeSelectorProps) {
-  const sizes: SizeOption[] = ['twin', 'twinXL', 'full', 'queen', 'king', 'calKing'];
+  const allSizes: SizeOption[] = ['twin', 'twinXL', 'full', 'fullXL', 'queen', 'king', 'calKing'];
+  const sizes = allSizes.filter((size) => prices[size] !== undefined);
 
   return (
     <div className="mb-6">
@@ -35,7 +37,7 @@ export default function SizeSelector({ selectedSize, onSizeChange, prices }: Siz
             }`}
           >
             <div className="text-sm font-medium">{sizeLabels[size]}</div>
-            <div className="text-xs text-gray-600">${prices[size]}</div>
+            <div className="text-xs text-gray-600">${prices[size]!}</div>
           </button>
         ))}
       </div>

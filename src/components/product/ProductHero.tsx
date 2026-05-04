@@ -16,7 +16,7 @@ export default function ProductHero({ product }: ProductHeroProps) {
   const [quantity, setQuantity] = useState(1);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-  const currentPrice = product.prices[selectedSize];
+  const currentPrice = product.prices[selectedSize] ?? 0;
 
   return (
     <section className="py-16 px-4 bg-white">
@@ -92,6 +92,17 @@ export default function ProductHero({ product }: ProductHeroProps) {
               onSizeChange={setSelectedSize}
               prices={product.prices}
             />
+
+            {/* Size Guide */}
+            <div className="mb-6">
+              <Image
+                src="/images/mattress_sizes.png"
+                alt="Mattress size guide"
+                width={600}
+                height={200}
+                className="w-full rounded-lg"
+              />
+            </div>
 
             {/* Quantity Selector */}
             <QuantitySelector

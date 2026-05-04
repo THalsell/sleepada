@@ -2,6 +2,7 @@ export interface ProductPrices {
   twin: number;
   twinXL: number;
   full: number;
+  fullXL?: number;
   queen: number;
   king: number;
   calKing: number;
@@ -40,7 +41,7 @@ export interface Product {
   bestFor: string;
 }
 
-export type SizeOption = 'twin' | 'twinXL' | 'full' | 'queen' | 'king' | 'calKing';
+export type SizeOption = 'twin' | 'twinXL' | 'full' | 'fullXL' | 'queen' | 'king' | 'calKing';
 
 // RV-specific sizes
 export type RVSizeOption =
